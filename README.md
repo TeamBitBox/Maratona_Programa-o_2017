@@ -1,1 +1,1 @@
-# Maratona_Programa-o_2017
+# Exercícios resolvidos Maratona de Programação - Etapa Regional 2017
