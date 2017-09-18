@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+#define MAX 10000
+using namespace std;
+
+int x[MAX];
+int y[MAX];
+
+float coef(int X, int pos){
+	return y[pos]/(x[pos] - X);
+}
+
+int a, b;
+int main(){
+	int n, x_main, y_main, quant=0;
+	scanf("%d %d %d", &n, &x_main, &y_main);	
+	for(int i=0; i<n; i++) scanf("%d %d", &x[i], &y[i]);
+	
+	for(int i=0; i<n; i++){
+		//a = 0;
+		float aux = coef(x_main, i);
+		float aux4 = coef(y_main, i);
+		for(int j=0; j<n; j++){
+			float aux2 = coef(x_main, j);
+			float aux3 = coef(y_main, j);
+			if(aux2<aux && aux3>aux4){
+				a++;	
+				if(a>=b) b = a;
+			}	
+		}
+	}
+
+printf("%d\n", ++b);
+return 0;
+}
